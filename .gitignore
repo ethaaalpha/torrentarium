@@ -2,3 +2,4 @@ downloader/
 library/
 managers/
 .venv/
+.env
