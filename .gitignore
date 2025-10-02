@@ -3,3 +3,4 @@ library/
 managers/
 .venv/
 .env
+.cache

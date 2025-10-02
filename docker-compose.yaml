@@ -1,18 +1,18 @@
 services:
-  # radarr:
-  #   image: lscr.io/linuxserver/radarr:latest
-  #   container_name: radarr
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - TZ=Europe/Paris
-  #   volumes:
-  #     - ${TIRUM_RADARR_CONFIG_FOLDER}:/config
-  #     - ${TIRUM_RADARR_MOVIES_FOLDER}:/movies
-  #     - ${TIRUM_TORRENT_DOWNLOAD_FOLDER}:/downloads
-  #   ports:
-  #     - 7878:7878
-  #   restart: unless-stopped
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - ${TIRUM_RADARR_CONFIG_FOLDER}:/config
+      - ${TIRUM_RADARR_MOVIES_FOLDER}:/movies
+      - ${TIRUM_TORRENT_DOWNLOAD_FOLDER}:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
 
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -34,18 +34,18 @@ services:
       - 6881:6881/udp
     restart: unless-stopped
   
-  configurator:
-    image: docker pull ghcr.io/astral-sh/uv:0.8-alpine3.22
+  # configurator:
+  #   image: docker pull ghcr.io/astral-sh/uv:0.8-alpine3.22
 
-  # prowlarr:
-  #   image: lscr.io/linuxserver/prowlarr:latest
-  #   container_name: prowlarr
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - TZ=Etc/UTC
-  #   volumes:
-  #     - ${TIRUM_PROWLARR_CONFIG_FOLDER}:/config
-  #   ports:
-  #     - 9696:9696
-  #   restart: unless-stopped
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ${TIRUM_PROWLARR_CONFIG_FOLDER}:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
